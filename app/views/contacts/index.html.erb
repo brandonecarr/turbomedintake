@@ -1,15 +1,41 @@
 <p style="color: green"><%= notice %></p>
   <div class="container">
-    <h1>Contacts</h1>
+
+    
+
+    <h1 class="inline">
+      Contacts
+    <%= link_to new_contact_path do %>
+        <%= icon('fa-plus', 'fa-2xl') %>
+    <% end %>
+    </h1>
 
     <div id="contacts">
-      <% @contacts.each do |contact| %>
-        <%= render contact %>
-        <p>
-          <%= link_to "Show this contact", contact %>
-        </p>
-      <% end %>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Clinic Name</th>
+              <th scope="col">Phone Number</th>
+              <th scope="col">View</th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @contacts.each do |contact| %>
+            <tr>
+              <th scope="row"><%= contact.id %></th>
+              <td><%= contact.first_name %> <%= contact.last_name %></td>
+              <td><%= contact.company %></td>
+              <td><%= contact.phone %></td>
+              <td><%= contact.first_name %></td>
+              <td>@<%= contact.first_name %></td>
+              <td>@<%= contact.first_name %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
     </div>
-
-  <%= link_to "New contact", new_contact_path %>
 </div>
