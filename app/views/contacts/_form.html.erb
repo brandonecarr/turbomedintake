@@ -10,58 +10,53 @@
       </ul>
     </div>
   <% end %>
-
-  <div>
-    <%= form.label :first_name, style: "display: block" %>
-    <%= form.text_field :first_name %>
+  <div class="row">
+    <div class="col">
+      <%= form.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+    </div>
+    <div class="col">
+      <%= form.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :last_name, style: "display: block" %>
-    <%= form.text_field :last_name %>
+  <div class="row">
+    <div class="col pt-5">
+      <%= form.text_field :company, class: "form-control", placeholder: "Clinic Name" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :company, style: "display: block" %>
-    <%= form.text_field :company %>
+  <div class="row pt-5">
+    <div class="col">
+      <%= form.text_field :address, class: "form-control", placeholder: "Address" %>
+    </div>
+    <div class="col">
+      <%= form.text_field :address2, class: "form-control", placeholder: "Floor, Suite, Unit, etc"  %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :address, style: "display: block" %>
-    <%= form.text_field :address %>
+  <div class="row pt-3">
+    <div class="col">
+      <%= form.text_field :city, class: "form-control", placeholder: "City" %>
+    </div>
+    <div class="col">
+      <%= form.select(:state, options_for_select([['Alabama', 'Alabama'], ['Alaska', 'Alaska'], ['Arizona', 'Arizona'], ['Arkansas', 'Arkansas'], ['California', 'California'], ['Colorado', 'Colorado'], ['Connecticut', 'Connecticut'], ['Delaware', 'Delaware'], ['District Of Columbia', 'District Of Columbia'], ['Florida', 'Florida'], ['Georgia', 'Georgia'], ['Hawaii', 'Hawaii'], ['Idaho', 'Idaho'], ['Illinois', 'Illinois'], ['Indiana', 'Indiana'], ['Iowa', 'Iowa'], ['Kansas', 'Kansas'], ['Kentucky', 'Kentucky'], ['Louisiana', 'Louisiana'], ['Maine', 'Maine'], ['Maryland', 'Maryland'], ['Massachusetts', 'Massachusetts'], ['Michigan', 'Michigan'], ['Minnesota', 'Minnesota'], ['Mississippi', 'Mississippi'], ['Missouri', 'Missouri'], ['Montana', 'Montana'], ['Nebraska', 'Nebraska'], ['Nevada', 'Nevada'], ['New Hampshire', 'New Hampshire'], ['New Jersey', 'New Jersey'], ['New Mexico', 'New Mexico'], ['New York', 'New York'], ['North Carolina', 'North Carolina'], ['North Dakota', 'North Dakota'], ['Ohio', 'Ohio'], ['Oklahoma', 'Oklahoma'], ['Oregon', 'Oregon'], ['Pennsylvania', 'Pennsylvania'], ['Rhode Island', 'Rhode Island'], ['South Carolina', 'South Carolina'], ['South Dakota', 'South Dakota'], ['Tennessee', 'Tennessee'], ['Texas', 'Texas'], ['Utah', 'Utah'], ['Vermont', 'Vermont'], ['Virginia', 'Virginia'], ['Washington', 'Washington'], ['West Virginia', 'West Virginia'], ['Wisconsin', 'Wisconsin'], ['Wyoming', 'Wyoming']]), {}, {class: "form-control"}) %>
+
+    </div>
+    <div class="col">
+      <%= form.text_field :zip, class: "form-control", placeholder: "Zip Code" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :address2, style: "display: block" %>
-    <%= form.text_field :address2 %>
+  <div class="row pt-5">
+    <div class="col">
+      <%= form.text_field :phone, class: "form-control", placeholder: "Phone Number" %>
+    </div>
+    <div class="col">
+      <%= form.text_field :email, class: "form-control", placeholder: "Email Address" %>
+    </div>
   </div>
 
-  <div>
-    <%= form.label :city, style: "display: block" %>
-    <%= form.text_field :city %>
-  </div>
-
-  <div>
-    <%= form.label :state, style: "display: block" %>
-    <%= form.text_field :state %>
-  </div>
-
-  <div>
-    <%= form.label :zip, style: "display: block" %>
-    <%= form.text_field :zip %>
-  </div>
-
-  <div>
-    <%= form.label :phone, style: "display: block" %>
-    <%= form.text_field :phone %>
-  </div>
-
-  <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="pt-5">
+    <%= form.submit class: "btn btn-primary" %>
   </div>
 <% end %>
