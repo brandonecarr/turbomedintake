@@ -1,11 +1,22 @@
 <p style="color: green"><%= notice %></p>
-<div class="container">
-  <%= render @contact %>
-
-  <div>
-    <%= link_to "Edit this contact", edit_contact_path(@contact) %> |
-    <%= link_to "Back to contacts", contacts_path %>
-
-    <%= button_to "Destroy this contact", @contact, method: :delete %>
+  <div class="container">
+    <div class="p-5 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold text-center"><%= @contact.first_name %> <%= @contact.last_name %></h1>
+          <p class="text-center fw-bold"><%= @contact.company %></p>
+          <div class="fs-5 text-center pt-3">
+            <i class="fa-solid fa-address-card"></i>
+              <p><%= @contact.address %> <%= @contact.address2 %> <%= @contact.city %>, <%= @contact.state %> <%= @contact.zip %></p>
+              <i class="fa-solid fa-phone"></i>
+              <p><%= @contact.phone %></p>
+              <i class="fa-solid fa-envelope"></i>
+              <p><%= @contact.email %></p>
+          </div>
+          <div class="d-grid gap-2 col-6 mt-5 mx-auto">
+            <%= link_to "Edit this contact", edit_contact_path(@contact), class: "btn btn-primary" %>
+            <%= button_to "Destroy this contact", @contact, method: :delete %>
+            <%= link_to "Back to contacts", contacts_path, class: "btn btn-secondary" %>
+          </div>
+        </div>
+      </div>
   </div>
-</div>
