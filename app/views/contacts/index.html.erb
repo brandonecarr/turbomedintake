@@ -1,12 +1,10 @@
 <p style="color: green"><%= notice %></p>
   <div class="container">
 
-    
-
     <h1 class="inline">
       Contacts
     <%= link_to new_contact_path do %>
-        <%= icon('fa-plus', 'fa-2xl') %>
+        <i class="fa-plus" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add New Contact"></i>
     <% end %>
     </h1>
 
@@ -29,10 +27,10 @@
               <td><%= contact.company %></td>
               <td><%= contact.phone %></td>
                 <td><%= link_to contact do %>
-                <i class="fa-solid fa-eye fa-lg"></i>
+                <i class="fa-solid fa-eye fa-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="View Contact"></i>
                 <% end %>
               <%= link_to edit_contact_path(contact) do %>
-                <i class="fa-solid fa-pen-to-square fa-lg"></i>
+                <i class="fa-solid fa-pen-to-square fa-lg" data-bs-toggle="tooltip" data-bs-placement="top" title="Edit Contact"></i>
                 <% end %>
               </td>
             </tr>
